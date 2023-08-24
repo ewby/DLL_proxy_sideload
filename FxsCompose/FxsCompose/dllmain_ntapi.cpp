@@ -21,7 +21,7 @@
 
 typedef DWORD(*HrInitComposeFormDll_Type)(void);
 
-typedef NTSTATUS (WINAPI* LPfnNtAllocateVirtualMemory)
+typedef NTSTATUS (NTAPI* LPfnNtAllocateVirtualMemory)
 (
     HANDLE           ProcessHandle,   
     PVOID*           BaseAddress,     
@@ -31,12 +31,12 @@ typedef NTSTATUS (WINAPI* LPfnNtAllocateVirtualMemory)
     ULONG            Protect           
 );
 
-typedef NTSTATUS (WINAPI* LPfnNtWriteVirtualMemory)
+typedef NTSTATUS (NTAPI* LPfnNtWriteVirtualMemory)
 (
     HANDLE ProcessHandle,
     PVOID BaseAddress,
     PVOID Buffer,
-    SIZE_T BufferSize,
+    ULONG NumberOfBytesToWrite,
     PSIZE_T NumberOfBytesWritten
 );
 
